@@ -9,7 +9,7 @@ RSpec.describe Desire, type: :model do
     end
 
     context 'when desire has a name' do
-      let(:subject) { Desire.new(name: 'sunglasses') }
+      let(:subject) { build(:desire) }
 
       it { is_expected.to be_valid }
     end
