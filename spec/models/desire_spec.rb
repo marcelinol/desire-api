@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Desire, type: :model do
   describe 'validations' do
-    let(:subject) { Desire.new }
+    let(:subject) { build(:desire, name: nil) }
 
     context 'when desire has no name' do
       it { is_expected.not_to be_valid }
