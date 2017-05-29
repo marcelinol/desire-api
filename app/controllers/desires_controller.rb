@@ -1,17 +1,12 @@
 class DesiresController < ApplicationController
   def index
-    @desires = Desire.all
-    render json: @desires, status: :ok
+    desires = Desire.all
+    json_response(desires)
   end
 
   def create
-    desire = Desire.new(desire_params)
-
-    if desire.save
-      render :nothing, status: :created
-    else
-      render plain: desire.errors.full_messages.first, status: :unprocessable_entity
-    end
+    desire = Desire.create!(desire_params)
+    json_response(desire, :created)
   end
 
   private
