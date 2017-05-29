@@ -1,0 +1,2 @@
+curl -H "Content-Type: application/json" -X POST -d '{"desire": {"name": "xunda"}}' http://localhost:8080/desires
+curl http://localhost:8080/desires
