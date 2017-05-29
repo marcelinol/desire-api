@@ -7,6 +7,7 @@ RSpec.describe 'Desires API', type: :request do
     before { get '/desires' }
 
     it 'return desires', :aggregate_failures do
+      expect(response.content_type).to eq('application/json')
       expect(json).not_to be_empty
       expect(json.size).to equal(10)
       expect(json.first['name']).to eq(Desire.first.name)

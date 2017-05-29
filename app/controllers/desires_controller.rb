@@ -9,11 +9,13 @@ class DesiresController < ApplicationController
 
     if desire.save
       render :nothing, status: :created
+    else
+      render plain: desire.errors.full_messages.first, status: :unprocessable_entity
     end
   end
 
   private
   def desire_params
-    params.require(:desire).permit(:name)
+    params.fetch(:desire, {}).permit(:name)
   end
 end
