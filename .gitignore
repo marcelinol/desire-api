@@ -42,3 +42,10 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# VIM temporary files
+
+*.swp
+*.swo
+.*.swp
+.*.swo
